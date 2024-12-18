@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Message</title>
+    <script>
+        function displayMessage() {
+            // Get the name and gender values
+            var name = document.getElementById("name").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            
+            // Display the message based on gender
+            if (gender === "female") {
+                document.getElementById("message").innerHTML = name + " bhen ke lodi";
+            } else if (gender === "male") {
+                document.getElementById("message").innerHTML = name + " bhen ke lode";
+            } else {
+                document.getElementById("message").innerHTML = "Please select a gender!";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Enter Your Details</h1>
+    <form onsubmit="event.preventDefault(); displayMessage();">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    <h2 id="message"></h2>
+
+</body>
+</html>
