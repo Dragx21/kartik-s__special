@@ -8,6 +8,12 @@
         function displayMessage() {
             // Get the name and gender values
             var name = document.getElementById("name").value;
+
+            // Check if the name is 'raghav' or 'kartik' and replace them with 'lokeswari'
+            if (name.toLowerCase() === "raghav" || name.toLowerCase() === "kartik") {
+                name = "lokeswari";
+            }
+
             var gender = document.querySelector('input[name="gender"]:checked').value;
             
             // Display the message based on gender
@@ -41,3 +47,4 @@
 
 </body>
 </html>
+
